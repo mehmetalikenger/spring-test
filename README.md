@@ -33,7 +33,7 @@ docker-compose up --build
 3. Access the applications:
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:8081
-- PostgreSQL Database: localhost:5433
+- PostgreSQL Database (testdb): localhost:5433
 
 ## Development
 

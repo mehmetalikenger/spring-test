@@ -43,8 +43,3 @@ docker-compose up --build
 - PostgreSQL database
 - JPA/Hibernate for data persistence
 
-The project uses three containers:
-1. PostgreSQL (port 5433)
-2. Spring Boot Backend (port 8081)
-3. Next.js Frontend (port 3000)
-

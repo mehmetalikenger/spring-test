@@ -7,16 +7,6 @@ This project demonstrates a full-stack application using Spring Boot for the bac
 - Docker
 - Docker Compose
 
-## Project Structure
-
-```
-springBootProject/
-├── backend/           # Spring Boot application
-├── frontend/         # Next.js application
-├── docker-compose.yml
-└── README.md
-```
-
 ## Getting Started
 
 1. Clone the repository:

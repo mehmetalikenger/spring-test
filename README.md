@@ -69,6 +69,50 @@ The project uses three containers:
 2. Spring Boot Backend (port 8081)
 3. Next.js Frontend (port 3000)
 
+## Troubleshooting
+
+### Common Issues
+
+1. **Port Conflicts**
+   - If you get port conflicts, make sure no other services are using ports 3000, 8081, or 5433
+   - You can modify the ports in docker-compose.yml if needed
+
+2. **Database Connection Issues**
+   - The PostgreSQL container might take a few seconds to start up
+   - Make sure you're using the correct port (5433) when connecting from outside Docker
+   - Inside Docker network, services use the container name (postgres) and default port (5432)
+
+3. **Build Issues**
+   - If you encounter build issues, try cleaning Docker:
+   ```bash
+   docker-compose down
+   docker system prune -a
+   docker-compose up --build
+   ```
+
+4. **Frontend-Backend Communication**
+   - The frontend is configured to communicate with the backend at http://localhost:8081
+   - Make sure both services are running and accessible
+
+### Development Workflow
+
+1. **Making Changes**
+   - Frontend changes will be reflected immediately due to hot reloading
+   - Backend changes require rebuilding the container:
+   ```bash
+   docker-compose up --build backend
+   ```
+
+2. **Viewing Logs**
+   - All containers: `docker-compose logs -f`
+   - Specific container: `docker-compose logs -f [service_name]`
+
+3. **Database Access**
+   - Connect to PostgreSQL using:
+   ```bash
+   docker exec -it postgres_db psql -U postgres -d testdb
+   ```
+
 ## Contributing
 
 1. Fork the repository
